@@ -25,7 +25,7 @@ void TerminalWindow::setFrame(const char &frameChar){
     }
 }
 
-void TerminalWindow::addTitle(const char *winTitle){
+void TerminalWindow::setTitle(const char *winTitle){
     unsigned short int titleLength=sizeof(winTitle)/sizeof(char)-1;
     unsigned short int writePos=size.ws_col/2 - titleLength/2;
     for(unsigned int i=0; i<titleLength; i++)
@@ -66,7 +66,7 @@ TerminalWindow::TerminalWindow(const char &frameChar, const char* winTitle){
     updateTerminalSize();
     initMatrix();
     setFrame(frameChar);
-    addTitle(winTitle);
+    setTitle(winTitle);
 }
 
 TerminalWindow::~TerminalWindow(){

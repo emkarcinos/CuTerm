@@ -1,9 +1,11 @@
 #pragma once
 
+#include "Window.h"
+
 #define DRAW_X_LIMIT 4096
 #define DRAW_Y_LIMIT 2056
 
-class TerminalWindow {
+class TerminalWindow : public Window{
     private:
         struct winsize { //holds info about terminal size
             unsigned short int ws_row;
@@ -17,7 +19,7 @@ class TerminalWindow {
         /* sets custom border */
         void setFrame(const char &frameChar);
         /* adds text to the top of the window */
-        void addTitle(const char *winTitle); 
+        void setTitle(const char *winTitle); 
     public:
         /* initializes empty window */
         TerminalWindow();
