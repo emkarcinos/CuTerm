@@ -5,21 +5,21 @@
 #include <iostream>
 
 void TerminalWindow::updateTerminalSize(){
-    ioctl(STDOUT_FILENO,TIOCGWINSZ, &size);
+    ioctl(STDOUT_FILENO,TIOCGWINSZ, &termDimm);
 }
 
 void TerminalWindow::initMatrix(){
-    for(int row=0; row<size.ws_row; row++){
-        for(int col=0; col<size.ws_col; col++){
+    for(int row=0; row<termDimm.ws_row; row++){
+        for(int col=0; col<termDimm.ws_col; col++){
             drawingMarix[row][col]=32;
         }
     }
 }
 
 void TerminalWindow::setFrame(const char &frameChar){
-    for(int row=0; row<size.ws_row; row++){
-        for(int col=0; col<size.ws_col; col++){
-            if(row==0 || row==size.ws_row-1 || col==0 || col==size.ws_col-1)
+    for(int row=0; row<termDimm.ws_row; row++){
+        for(int col=0; col<termDimm.ws_col; col++){
+            if(row==0 || row==termDimm.ws_row-1 || col==0 || col==termDimm.ws_col-1)
                 drawingMarix[row][col]=frameChar;
         }
     }
@@ -27,17 +27,17 @@ void TerminalWindow::setFrame(const char &frameChar){
 
 void TerminalWindow::setTitle(const char *winTitle){
     unsigned short int titleLength=sizeof(winTitle)/sizeof(char)-1;
-    unsigned short int writePos=size.ws_col/2 - titleLength/2;
+    unsigned short int writePos=termDimm.ws_col/2 - titleLength/2;
     for(unsigned int i=0; i<titleLength; i++)
         drawingMarix[0][writePos+i]=winTitle[i];
 }
 
 void TerminalWindow::draw() const{
-    for(int row=0; row<size.ws_row; row++){
-        for(int col=0; col<size.ws_col; col++){
+    for(int row=0; row<termDimm.ws_row; row++){
+        for(int col=0; col<termDimm.ws_col; col++){
             std::cout << drawingMarix[row][col];
         }
-        if(row!=size.ws_row-1) // won't put newline after last line
+        if(row!=termDimm.ws_row-1) // won't put newline after last line
             std::cout << "\n";
     }
     //move the "cursor" to the beginning of the screen
@@ -74,11 +74,11 @@ TerminalWindow::~TerminalWindow(){
     system("setterm -cursor on");
 }
 
-void TerminalWindow::append(){};
+void TerminalWindow::append(const Window &win){};
 
 void TerminalWindow::alterMatrix(){
-    for(int row=0; row<size.ws_row; row++){
-        for(int col=0; col<size.ws_col; col++){
+    for(int row=0; row<termDimm.ws_row; row++){
+        for(int col=0; col<termDimm.ws_col; col++){
             drawingMarix[row][col]='a';
         }
     }
