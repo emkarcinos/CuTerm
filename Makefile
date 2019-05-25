@@ -9,11 +9,10 @@ OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
 
-CPPFLAGS := $(INC_FLAGS) --std=c++17 -Wall
+CPPFLAGS := $(INC_FLAGS) -Wall --std=c++17
 
 
 $(BUILD_DIR)/$(TARGET): $(OBJS)
-	echo $(LDFLAGS)
 	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
 
 $(BUILD_DIR)/%.cpp.o: %.cpp
