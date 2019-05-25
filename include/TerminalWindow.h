@@ -20,12 +20,10 @@ class TerminalWindow : public Window{
     public:
         /* Initializes empty window */
         TerminalWindow();
-        /* Initializes window with a border */
-        TerminalWindow(const char &frameChar);
         /* Initalizes window with a border and a title */
-        TerminalWindow(const char &frameChar, const char* winTitle);
+        TerminalWindow(const char &frameChar=32, const char* winTitle=nullptr);
         /* Flushes the screen */
-        ~TerminalWindow();
+        virtual ~TerminalWindow();
         /* Draws everything from the drawing matrix, "refreshes" the whole terminal window */
         void draw() const;
         /* Adds smaller windows to the screnn */

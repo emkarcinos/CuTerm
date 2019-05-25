@@ -54,19 +54,13 @@ TerminalWindow::TerminalWindow(){
     initMatrix();
 }
 
-TerminalWindow::TerminalWindow(const char &frameChar){
-    system("setterm -cursor off");
-    updateTerminalSize();
-    initMatrix();
-    setFrame(frameChar);
-}
-
 TerminalWindow::TerminalWindow(const char &frameChar, const char* winTitle){
     system("setterm -cursor off");
     updateTerminalSize();
     initMatrix();
     setFrame(frameChar);
-    setTitle(winTitle);
+    if(winTitle!=nullptr)
+        setTitle(winTitle);
 }
 
 TerminalWindow::~TerminalWindow(){
