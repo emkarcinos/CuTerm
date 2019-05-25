@@ -1,3 +1,7 @@
+#include "TerminalWindow.h"
+#include <iostream>
+
 int main(){
-    return 0;
+    TerminalWindow* terminal = new TerminalWindow();
+    std::cin.get();
 }

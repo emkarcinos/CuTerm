@@ -5,14 +5,15 @@
 
 class TerminalWindow {
     private:
-        struct winsize {
-            unsigned short int ws_row, ws_col;
+        struct winsize { //holds info about terminal size
+            unsigned short int ws_row;
+            unsigned short int ws_col;
         } size;
-        char drawingMarix[DRAW_Y_LIMIT][DRAW_X_LIMIT];
+        char drawingMarix[DRAW_Y_LIMIT][DRAW_X_LIMIT]; //matrix representation of the screen
         void updateTerminalSize();
     public:
         TerminalWindow();
-        void draw();
-        void update();
-        void append();
+        virtual void draw(); //this function draws everything from the drawing matrix, "refreshes" the whole terminal window
+        virtual void update();
+        virtual void append();
 };
