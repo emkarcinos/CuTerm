@@ -74,7 +74,7 @@ TerminalWindow::~TerminalWindow(){
     system("setterm -cursor on");
 }
 
-void TerminalWindow::append(const Window &win){};
+void TerminalWindow::append(){};
 
 void TerminalWindow::alterMatrix(){
     for(int row=0; row<termDimm.ws_row; row++){

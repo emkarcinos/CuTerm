@@ -5,12 +5,6 @@
 
 class Window {
     protected:
-        struct Dimmensions {
-            unsigned short int posX;
-            unsigned short int posY;
-            unsigned short int sizeX;
-            unsigned short int sizeY;
-        } winDimm;
         /* Matrix representation of the window's content */
         char drawingMarix[DRAW_Y_LIMIT][DRAW_X_LIMIT];
     private:

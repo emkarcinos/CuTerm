@@ -4,8 +4,6 @@
 
 class TerminalWindow : public Window{
     private:
-        // winDimm is not used in this subclass, because ioctl requires different struct as a parameter
-
         /* Holds info about terminal dimmensions */
         struct winsize {
             unsigned short int ws_row;
@@ -31,7 +29,7 @@ class TerminalWindow : public Window{
         /* Draws everything from the drawing matrix, "refreshes" the whole terminal window */
         void draw() const;
         /* Adds smaller windows to the screnn */
-        void append(const Window &win);
+        void append();
         /* Basically a clear system funcion */
         void clear() const;
 
