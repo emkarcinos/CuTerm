@@ -1,29 +1,26 @@
-EXE = CuTerm_sample
+TARGET := CuTerm_sample
 
-CC = g++
+BUILD_DIR := bin
+SRC_DIR := src
+INC_DIR := include
 
-SRC_DIR = src
-OBJ_DIR = obj
-BIN_DIR = bin
+SRCS := $(shell find $(SRC_DIR) -name *.cpp)
+OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
-SRC = $(wildcard $(SRC_DIR)/*.cpp)
-OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+INC_FLAGS := $(addprefix -I,$(INC_DIR))
 
-CPPFLAGS += -Iinclude
-CFLAGS += -Wall
-LDFLAGS += -Llib
-LDLIBS += -lm
+CPPFLAGS := $(INC_FLAGS) --std=c++17 -Wall
 
-.PHONY: all clean
 
-all: $(EXE)
+$(BUILD_DIR)/$(TARGET): $(OBJS)
+	echo $(LDFLAGS)
+	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
 
-$(EXE): $(OBJ)
-	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $(BIN_DIR)/$@
+$(BUILD_DIR)/%.cpp.o: %.cpp
+	mkdir -p $(dir $@)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+.PHONY: clean
 
 clean:
-	$(RM) $(OBJ)
-
+	rm -rf $(BUILD_DIR)/*
