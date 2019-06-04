@@ -9,7 +9,7 @@ int main(){
     win1->setFrame('*');
     win1->setTitle(" New Title ");
     terminal->append(*win1);
+    delete win1;    
     std::cin.get();
     delete terminal;
-    delete win1;    
 }
