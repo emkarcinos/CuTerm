@@ -12,7 +12,7 @@ class TextWindow : public InnerWindow {
     public:
         TextWindow();
         TextWindow(const char &frameChar, const char* winName, const char* text);
-        ~TextWindow();
+        virtual ~TextWindow();
         /* Adds a text to the window */
         virtual void addText(const char* text) override;
         /* Adds a text object to the window */
