@@ -23,14 +23,17 @@ TextWindow::TextWindow(const char &frameChar, const char* winName, const char* t
     setTitle(winName);
     addText(text);
 }
+
 void TextWindow::makeDrawingMatrix(){
 
 }
 
 void TextWindow::clear(){
-
+    for(unsigned int row=0; row<winDimm.sizeY; row++){
+        for(unsigned int col=0; col<winDimm.sizeX; col++)
+            drawingMarix[row][col]=32; //fills with spacebarss
+    }
 }
-
 
 TextWindow::~TextWindow(){
     clear();
