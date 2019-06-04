@@ -5,8 +5,6 @@
 
 class TextWindow : public InnerWindow {
     private:
-        /* Creates the matrix */
-        virtual void makeDrawingMatrix() override;
         /* Sets window dimmension based of the text object */
         //void setDimmensions(TEXTOBJ);
     public:

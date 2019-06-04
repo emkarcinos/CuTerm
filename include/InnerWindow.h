@@ -14,8 +14,6 @@ class InnerWindow : public Window {
         } winDimm;
         /* Populates drawingMatrix with spacebars */
         void initMatrix();
-        /* Creates the matrix */
-        virtual void makeDrawingMatrix()=0;
         /* Sets window dimmension by values */
         void setDimmensions(const unsigned int _x, const unsigned int _y);
         /* Sets window position to center*/
