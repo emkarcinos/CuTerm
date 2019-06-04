@@ -12,10 +12,6 @@ class InnerWindow : public Window {
             unsigned short int sizeY;
             char* align;
         } winDimm;
-        /* Sets custom window border */
-        void setFrame(const char &frameChar);
-        /* Adds text to the top of the window */
-        void setTitle(const char* winTitle);
         /* Populates drawingMatrix with spacebars */
         void initMatrix();
         /* Creates the matrix */
@@ -33,4 +29,8 @@ class InnerWindow : public Window {
         virtual void addText(const char* text)=0;
         /* Clears the window's content */
         virtual void clear()=0;
+        /* Sets custom window border */
+        void setFrame(const char &frameChar);
+        /* Adds text to the top of the window */
+        void setTitle(const char* winTitle);
 };
