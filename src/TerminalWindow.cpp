@@ -3,6 +3,7 @@
 #include <sys/ioctl.h>
 #include <stdio.h>
 #include <iostream>
+#include <string.h>
 
 void TerminalWindow::updateTerminalSize(){
     ioctl(STDOUT_FILENO,TIOCGWINSZ, &termDimm);
@@ -26,7 +27,7 @@ void TerminalWindow::setFrame(const char &frameChar){
 }
 
 void TerminalWindow::setTitle(const char *winTitle){
-    unsigned short int titleLength=sizeof(winTitle)/sizeof(char)-1;
+    unsigned short int titleLength=strlen(winTitle);
     unsigned short int writePos=termDimm.ws_col/2 - titleLength/2;
     for(unsigned int i=0; i<titleLength; i++)
         drawingMarix[0][writePos+i]=winTitle[i];
@@ -68,12 +69,22 @@ TerminalWindow::~TerminalWindow(){
     system("setterm -cursor on");
 }
 
-void TerminalWindow::append(){};
-
 void TerminalWindow::alterMatrix(){
     for(int row=0; row<termDimm.ws_row; row++){
         for(int col=0; col<termDimm.ws_col; col++){
             drawingMarix[row][col]='a';
         }
     }
+}
+
+void TerminalWindow::append(InnerWindow& win){
+    unsigned int startX = termDimm.ws_col/2 - win.winDimm.sizeX/2;
+    unsigned int startY = termDimm.ws_row/2 - win.winDimm.sizeY/2;
+    for(unsigned int row=0; row<win.winDimm.sizeY; row++){
+        for(unsigned int col=0; col<win.winDimm.sizeX; col++){
+            //std::cout << win.drawingMarix[row][col];
+            this->drawingMarix[row+startY][col+startX]=win.drawingMarix[row][col];
+        }
+    }
+    draw();
 }

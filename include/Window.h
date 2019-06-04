@@ -14,5 +14,7 @@ class Window {
         virtual void setTitle(const char* winTitle)=0;
         /* Populates drawingMatrix with spacebars */
         virtual void initMatrix()=0;
-
+    public:
+        Window();
+        ~Window();
 };

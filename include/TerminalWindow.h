@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Window.h"
+#include "InnerWindow.h"
 
 class TerminalWindow : public Window{
     private:
@@ -26,8 +27,8 @@ class TerminalWindow : public Window{
         virtual ~TerminalWindow();
         /* Draws everything from the drawing matrix, "refreshes" the whole terminal window */
         void draw() const;
-        /* Adds smaller windows to the screnn */
-        void append();
+        /* Adds smaller windows to the center of the screen */
+        void append(InnerWindow& win);
         /* Basically a clear system funcion */
         void clear() const;
 
