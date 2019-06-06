@@ -16,16 +16,6 @@ class TextObject {
         std::string textArray[MAX_STR_LINES];
         /* Initializes textArray with spacebars */
         void initTextArray();
-        /* Splits the string into multiple lines */
-        void splitStringToLines(const std::string& text);
-
-        /* Formatting functions */
-        /* Aligns one line to the center of the textbox */
-        std::string alignLineCenter(const std::string& text);
-        /* Aligns one line to the left side of the textbox */
-        std::string alignLineLeft(const std::string& text);
-        /* Aligns one line to the right side of the texbox */
-        std::string alignLineRight(const std::string& text);
 
     public:
         /* Returns a textbox with default dimmensions x=20, y=5 */
