@@ -19,8 +19,8 @@ void TextObject::appendString(const std::string& text){
     textStr+=text;
 }
 
-void TextObject::format(const std::string& text, const std::string& method, const unsigned int& spacing=0){
-    std::string result=splitStringToLines(text, size.x, size.y);
+void TextObject::format(const std::string& text, const std::string& method, const unsigned int& spacing){
+    std::string result=splitStringToLines(text, size.x, size.y, spacing);
 }
 
 
