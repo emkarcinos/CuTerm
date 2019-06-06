@@ -15,7 +15,7 @@ int main(){
     // std::cin.get();
     // delete terminal;
     std::string test ="To jest testowy wyraz, powinien zostać podzielony tak jak trzeba.";
-    std::string arr=splitStringToLines(test, 150, 10);
+    std::string arr=splitStringToLines(test, 20, 10);
     std::cout << arr;
 
 }
