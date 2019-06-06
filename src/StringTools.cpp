@@ -1,5 +1,7 @@
 #include "StringTools.h"
 
+#include <sstream>
+
 bool isDelimeter(const char& ch){
     for(char del : DELIM) 
         if(ch==del) return 1;
@@ -36,14 +38,44 @@ std::string splitStringToLines(const std::string& text, const unsigned int& size
     return finalStr;
 }
 
-std::string alignLineCenter(const std::string& text){
-    static std::string result;
+std::string alignLineCenter(const std::string& text, const unsigned int& size){
+    std::istringstream f(text);
+    std::stringstream stream;
+    std::string line;
+    while(std::getline(f, line)){
+        std::string strPredecessor="";
+        for(unsigned int ch=line.length()/2; ch<size/2; ch++){
+            strPredecessor+=' '; // asterisk just for testing, should be ' ' 
+            line+=' ';
+        }
+        if(size%2==0)
+            line.pop_back();
+        stream << strPredecessor << line << "\n";
+    }
+    return stream.str();
 }
 
-std::string alignLineLeft(const std::string& text){
-    static std::string result;
-}
+std::string alignLineLeft(const std::string& text, const unsigned int& size){
+    std::istringstream f(text);
+    std::stringstream stream;
+    std::string line;
+    while(std::getline(f, line)){
+        for(unsigned int ch=line.length(); ch<size; ch++)
+            line+=' '; // asterisk just for testing, should be ' ' 
+        stream << line << "\n";
+    }
+    return stream.str();
+}   
 
-std::string alignLineRight(const std::string& text){
-    return text;
+std::string alignLineRight(const std::string& text, const unsigned int& size){ 
+    std::istringstream f(text);
+    std::stringstream stream;
+    std::string line;
+    while(std::getline(f, line)){
+        std::string strPredecessor="";
+        for(unsigned int ch=line.length(); ch<size; ch++)
+            strPredecessor+=' '; // asterisk just for testing, should be ' ' 
+        stream << strPredecessor << line << "\n";
+    }
+    return stream.str();
 }
