@@ -11,7 +11,7 @@ class TextObject {
             unsigned short y;
         } size;
         /* Raw text */
-        std::string textStr;
+        std::string textStr=std::string("");
         /* Parsed text */
         std::string textArray[MAX_STR_LINES];
         /* Initializes textArray with spacebars */
