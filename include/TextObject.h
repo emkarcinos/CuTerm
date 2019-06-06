@@ -4,6 +4,8 @@
 #include <string>
 
 class TextObject {
+    friend class TextWindow;
+    private:
         struct Dimmensions {
             unsigned short x;
             unsigned short y;
