@@ -1,4 +1,5 @@
 #include "TextObject.h"
+#include "StringTools.h"
 
 TextObject::TextObject(){
     size.x=20;
@@ -18,8 +19,8 @@ void TextObject::appendString(const std::string& text){
     textStr+=text;
 }
 
-void format(const std::string& text, const std::string method, const unsigned int spacing=0){
-
+void TextObject::format(const std::string& text, const std::string& method, const unsigned int& spacing=0){
+    std::string result=splitStringToLines(text, size.x, size.y);
 }
 
 
