@@ -1,7 +1,7 @@
 
 #include "TerminalWindow.h"
 #include "TextWindow.h"
-#include "StringTools.h"
+#include "TextObject.h"
 #include <iostream>
 
 int main(){
@@ -14,9 +14,9 @@ int main(){
     // delete win1;    
     // std::cin.get();
     // delete terminal;
-    std::string test ="To jest testowy wyraz, powinien zostac podzielony tak jak trzeba.";
-    std::string arr=splitStringToLines(test, 21, 10, 0);
-    arr=alignLineRight(arr,31);
-    std::cout << arr;
+    std::string text="To jest przykladowy tekst, jakis tam sobie istnieje.";
+    TextObject textObject = TextObject(text, 15, 25, 1);
+    textObject.format("center");
+    std::cout << textObject.toString();
 
 }
