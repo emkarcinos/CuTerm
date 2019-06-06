@@ -4,7 +4,7 @@
 #include <string>
 
 #define MAX_STR_LINES 256
-
+bool isDelimeter(const char& ch)
 class TextObject {
         struct Dimmensions {
             unsigned short x;
