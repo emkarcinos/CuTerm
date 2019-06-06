@@ -3,8 +3,6 @@
 #include <iostream>
 #include <string>
 
-#define MAX_STR_LINES 256
-
 class TextObject {
         struct Dimmensions {
             unsigned short x;
@@ -13,9 +11,7 @@ class TextObject {
         /* Raw text */
         std::string textStr=std::string("");
         /* Parsed text */
-        std::string textArray[MAX_STR_LINES];
-        /* Initializes textArray with spacebars */
-        void initTextArray();
+        std::string finalStr=std::string("");
 
     public:
         /* Returns a textbox with default dimmensions x=20, y=5 */
