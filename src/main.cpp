@@ -1,5 +1,7 @@
+
 #include "TerminalWindow.h"
 #include "TextWindow.h"
+#include "StringTools.h"
 #include <iostream>
 
 int main(){
@@ -12,4 +14,8 @@ int main(){
     delete win1;    
     std::cin.get();
     delete terminal;
+    std::string test ="To jest testowy wyraz, powinien zostać podzielony tak jak trzeba";
+    std::string arr=splitStringToLines(test, 15, 10);
+    std::cout << arr;
+
 }

@@ -2,8 +2,12 @@
 
 #include <string>
 
+#define DELIM " \n\t,.-\0"
+
+/* Checks whereher the character is a delimeter */
+bool isDelimeter(const char& ch);
 /* Splits the string into multiple lines */
-std::string* splitStringToLines(const std::string& text);
+std::string splitStringToLines(const std::string& text, const unsigned int& sizeX, const unsigned int& sizeY);
 
 /* Formatting functions */
 /* Aligns one line to the center of the textbox */
