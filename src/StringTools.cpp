@@ -8,7 +8,7 @@ bool isDelimeter(const char& ch){
     return 0;
 }
 
-std::string splitStringToLines(const std::string& text, const unsigned int& sizeX, const unsigned int& sizeY){
+std::string splitStringToLines(const std::string& text, const unsigned int& sizeX, const unsigned int& sizeY, const unsigned int& spacing){
     static std::string finalStr;
     unsigned int lastEndPos=0; // Position of the ending of the last line
     unsigned int cursorPos=0; 
@@ -24,7 +24,11 @@ std::string splitStringToLines(const std::string& text, const unsigned int& size
                 else {
                     for(unsigned int i=0; i<lastDelimOccurrence-lastEndPos; i++)
                         finalStr+=text[i+lastEndPos];
-                    finalStr+="\n";
+                    for(unsigned int spac=0; spac<=spacing; spac++){
+                        if(spac>=1) line++;
+                        if(line>=sizeY) break;
+                        finalStr+="\n";
+                    }
                     lastEndPos=lastDelimOccurrence+1;
                     break;
                 }
