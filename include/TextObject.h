@@ -14,6 +14,8 @@ class TextObject {
         std::string text;
         /* Parsed text */
         std::string textArray[MAX_STR_LINES];
+        /* Initializes textArray with spacebars */
+        void initTextArray();
         /* Splits the string into multiple lines */
         void splitStringToLines(const std::string text);
 
