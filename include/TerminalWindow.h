@@ -31,7 +31,8 @@ class TerminalWindow : public Window{
         void append(InnerWindow& win);
         /* Basically a clear system funcion */
         void clear() const;
-
+        /* Removes an inner window from the terminal */
+        void removeWindow(InnerWindow& win);
         /* DEBUG FUNCTIONS */
 
         /* you can manipulate drawingMatrix using this */
