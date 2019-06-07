@@ -28,6 +28,14 @@ void TextWindow::addTextObject(const TextObject& textObj){
     }
 }
 
+TextWindow::TextWindow(const TextObject& textObj, const char& frameChar, const char* winName){
+    setDimmensions(textObj.size.x+4, textObj.size.y+4);
+    initMatrix();
+    setFrame(frameChar);
+    setTitle(winName);
+    addTextObject(textObj);
+}
+
 TextWindow::TextWindow(){
     setDimmensions(5,5);
     initMatrix();
