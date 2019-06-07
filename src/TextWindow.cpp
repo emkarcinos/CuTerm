@@ -15,6 +15,7 @@ void TextWindow::addTextObject(const TextObject& textObj){
     if(textObj.size.x > winDimm.sizeX-2 && textObj.size.y > winDimm.sizeY-2) 
     // if the window's dimmensions are not big enoguh, the function will return.
         return;
+    textObj
     unsigned int startX = winDimm.sizeX/2 - textObj.size.x/2;
     unsigned int startY = winDimm.sizeY/2 - textObj.size.y/2;
     unsigned int lineCount=0;
@@ -56,6 +57,5 @@ void TextWindow::clear(){
     }
 }
 
-TextWindow::~TextWindow(){
-    clear();
+TextWindow::~TextWindow(){;
 }

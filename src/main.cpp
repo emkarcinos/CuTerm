@@ -15,7 +15,6 @@ int main(){
 
     TextWindow* win1 = new TextWindow(*textObj, '*', " Right Aligned ");
     terminal->append(*win1);
-    terminal->removeWindow(*win1);
     delete win1;    
     std::cin.get();
     delete terminal;

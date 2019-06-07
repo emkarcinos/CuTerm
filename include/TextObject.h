@@ -1,5 +1,7 @@
 #pragma once
 
+#include "InnerWindow.h"
+
 #include <iostream>
 #include <string>
 
@@ -11,6 +13,7 @@ class TextObject {
             unsigned short y;
             unsigned short spacing;
         } size;
+        InnerWindow* parent=nullptr;
         /* Raw text */
         std::string textStr=std::string("");
         /* Parsed text */

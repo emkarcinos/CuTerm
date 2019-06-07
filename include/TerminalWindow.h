@@ -3,6 +3,8 @@
 #include "Window.h"
 #include "InnerWindow.h"
 
+class InnerWindow;
+
 class TerminalWindow : public Window{
     private:
         /* Holds info about terminal dimmensions */

@@ -2,9 +2,11 @@
 
 #include "Window.h"
 #include "TerminalWindow.h"
+#include "TextObject.h"
 
 class InnerWindow : public Window {
     friend class TerminalWindow;
+    friend class TextObj;
     protected:
         struct Dimmensions {
             unsigned short int posX;
@@ -34,4 +36,6 @@ class InnerWindow : public Window {
         void setFrame(const char &frameChar);
         /* Adds text to the top of the window */
         void setTitle(const char* winTitle);
+        /* Removes a TextObject from the window */
+        void removeTextObject(TextObject& textObj);
 };

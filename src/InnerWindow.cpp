@@ -1,4 +1,5 @@
 #include "InnerWindow.h"
+
 #include <string.h>
 
 void InnerWindow::initMatrix(){
@@ -40,4 +41,19 @@ void InnerWindow::setPos(const unsigned int _x, const unsigned int _y){
 }
 
 InnerWindow::InnerWindow(){ }
-InnerWindow::~InnerWindow(){ }
+
+InnerWindow::~InnerWindow(){
+    parent->removeWindow(*this);
+ }
+
+// void InnerWindow::removeTextObject(TextObject& textObj){
+//     unsigned int startY=win/2 - win.winDimm.sizeY/2;
+//     unsigned int startX=termDimm.ws_col/2 - win.winDimm.sizeX/2;
+//     for(unsigned int row=0; row<win.winDimm.sizeY; row++){
+//         for(unsigned int col=0; col<win.winDimm.sizeX; col++){
+//             drawingMarix[row+startY][col+startX]=' ';
+//         }
+//     }
+//     win.parent=nullptr;
+//     draw();
+// }
