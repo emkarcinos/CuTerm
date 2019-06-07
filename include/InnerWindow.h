@@ -14,7 +14,7 @@ class InnerWindow : public Window {
             char* align;
         } winDimm;
         /* This variable stores "where this object belongs" */
-        TerminalWindow* parent;
+        TerminalWindow* parent=nullptr;
         /* Populates drawingMatrix with spacebars */
         void initMatrix();
         /* Sets window dimmension by values */
