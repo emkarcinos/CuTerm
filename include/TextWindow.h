@@ -11,6 +11,9 @@ class TextWindow : public InnerWindow {
         void setDimmensionsByObject(const TextObject& textObj);
     public:
         TextWindow();
+        /* This constructor sets the size automatically based on the TextObject dimmensions */
+        TextWindow(const TextObject& textObj, const char& frameChar='*', const char* winName="");
+        /* Obfuscated constructor */
         TextWindow(const char &frameChar, const char* winName="", const char* text="");
         virtual ~TextWindow();
         /* Adds a text to the window */
