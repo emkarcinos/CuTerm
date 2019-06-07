@@ -78,6 +78,9 @@ void TerminalWindow::alterMatrix(){
 }
 
 void TerminalWindow::append(InnerWindow& win){
+    // Checks whether the InnerWindow fits inside the terminal
+    if(win.winDimm.sizeX>termDimm.ws_col || win.winDimm.sizeY>termDimm.ws_row)
+        return;
     unsigned int startX = termDimm.ws_col/2 - win.winDimm.sizeX/2;
     unsigned int startY = termDimm.ws_row/2 - win.winDimm.sizeY/2;
     for(unsigned int row=0; row<win.winDimm.sizeY; row++){
