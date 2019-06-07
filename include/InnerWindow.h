@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Window.h"
+#include "TerminalWindow.h"
 
 class InnerWindow : public Window {
     friend class TerminalWindow;
@@ -12,6 +13,8 @@ class InnerWindow : public Window {
             unsigned short int sizeY;
             char* align;
         } winDimm;
+        /* This variable stores "where this object belongs" */
+        TerminalWindow* parent;
         /* Populates drawingMatrix with spacebars */
         void initMatrix();
         /* Sets window dimmension by values */
