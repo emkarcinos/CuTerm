@@ -3,7 +3,6 @@
 #include "InnerWindow.h"
 
 class TextObject;
-class TerminalWindow;
 
 template<class type>
 class PromptWindow : public InnerWindow {
