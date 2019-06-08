@@ -10,8 +10,6 @@ class PromptWindow : public InnerWindow {
     private:
         /* Obfuscated */
         PromptWindow();
-        /* Adds a text to the window */
-        virtual void addText(const char* text) override;
         /* Moves the cursor to the typing position */
         void moveCursor();
         /* Calls all necesary functons to create the drawingMatrix */
@@ -21,5 +19,7 @@ class PromptWindow : public InnerWindow {
         static type prompt(TerminalWindow& termial, const TextObject& textObj, type& output, const char& frameChar=' ', const char* winTitle="");
         /* Adds a text object to the window */
         virtual void addTextObject(TextObject& textObj) override;
+         /* Removes the text object from the window */
+        virtual void removeTextObject(TextObject& textObj) override;
         virtual ~PromptWindow();
 };
