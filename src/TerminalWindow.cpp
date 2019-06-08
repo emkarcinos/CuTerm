@@ -1,4 +1,6 @@
 #include "TerminalWindow.h"
+#include "InnerWindow.h"
+
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <stdio.h>

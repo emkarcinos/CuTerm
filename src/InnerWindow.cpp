@@ -1,4 +1,6 @@
 #include "InnerWindow.h"
+#include "TextObject.h"
+#include "TerminalWindow.h"
 
 #include <string.h>
 

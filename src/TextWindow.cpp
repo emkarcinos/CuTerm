@@ -1,4 +1,5 @@
 #include "TextWindow.h"
+#include "TextObject.h"
 #include "string.h"
 
 void TextWindow::addText(const char* text){

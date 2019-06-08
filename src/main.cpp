@@ -2,7 +2,6 @@
 #include "TerminalWindow.h"
 #include "TextWindow.h"
 #include "TextObject.h"
-#include "StringTools.h"
 #include <iostream>
 
 int main(){

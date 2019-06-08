@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Window.h"
-#include "TerminalWindow.h"
-#include "TextObject.h"
 
 class TerminalWindow;
 class TextObject;

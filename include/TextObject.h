@@ -3,9 +3,8 @@
 #include <iostream>
 #include <string>
 
-#include "InnerWindow.h"
-
 class InnerWindow;
+class TextWindow;
 
 class TextObject {
     friend class InnerWindow;

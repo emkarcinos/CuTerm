@@ -1,9 +1,10 @@
 #pragma once
 
 #include "InnerWindow.h"
-#include "TextObject.h"
 
 #include <string>
+
+class TextObject;
 
 class TextWindow : public InnerWindow {
     private:
