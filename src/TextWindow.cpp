@@ -40,5 +40,16 @@ void TextWindow::clear(){
     }
 }
 
+void TextWindow::removeTextObject(TextObject& textObj){
+    unsigned int startY=winDimm.sizeY/2 - textObj.size.x/2;
+    unsigned int startX=winDimm.sizeX/2 - textObj.size.y/2;
+    for(unsigned int row=0; row<textObj.size.y; row++){
+        for(unsigned int col=0; col<textObj.size.x; col++){
+            drawingMarix[row+startY][col+startX]=' ';
+        }
+    }
+    textObj.parent=nullptr;
+}
+
 TextWindow::~TextWindow(){;
 }

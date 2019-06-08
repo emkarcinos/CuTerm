@@ -19,4 +19,6 @@ class TextWindow : public InnerWindow {
         virtual void clear() override;
         /* Adds a text object to the window */
         virtual void addTextObject(TextObject& textObj) override;
+        /* Removes the text object from the window */
+        virtual void removeTextObject(TextObject& textObj) override;
 };
