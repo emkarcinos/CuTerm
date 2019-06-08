@@ -13,6 +13,7 @@ void InnerWindow::initMatrix(){
 }
 
 void InnerWindow::setFrame(const char &frameChar){
+    frame=frameChar;
     for(int row=0; row<winDimm.sizeY; row++){
         for(int col=0; col<winDimm.sizeX; col++){
             if(row==0 || row==winDimm.sizeY-1 || col==0 || col==winDimm.sizeX-1)

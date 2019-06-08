@@ -16,6 +16,8 @@ class InnerWindow : public Window {
             unsigned short int sizeY;
             char* align;
         } winDimm;
+        /* Stores a character from which the frame is built */
+        char frame;
         /* This variable stores "where this object belongs" */
         TerminalWindow* parent=nullptr;
         /* Populates drawingMatrix with spacebars */
