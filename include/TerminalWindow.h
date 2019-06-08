@@ -3,10 +3,10 @@
 #include "Window.h"
 
 class InnerWindow;
-class PromptWindow;
+template<class type> class PromptWindow;
 
 class TerminalWindow : public Window{
-    friend class PromptWindow;
+    friend class PromptWindow<void>;
     private:
         /* Holds info about terminal dimmensions */
         struct winsize {
