@@ -31,16 +31,14 @@ class InnerWindow : public Window {
     public:
         InnerWindow();
         ~InnerWindow();
-        /* Adds a text object to the window */
-        virtual void addText(const char* text)=0;
-        /* Clears the window's content */
+        /* Erases the window's content */
         virtual void clear()=0;
         /* Sets custom window border */
         void setFrame(const char &frameChar);
         /* Adds text to the top of the window */
         void setTitle(const char* winTitle);
         /* Adds a text object to the window */
-        void addTextObject(TextObject& textObj);
+        virtual void addTextObject(TextObject& textObj)=0;
         /* Removes a TextObject from the window */
         void removeTextObject(TextObject& textObj);
 };
