@@ -5,10 +5,14 @@
 
 class InnerWindow;
 class TextWindow;
+template<class type> class PromptWindow;
 
 class TextObject {
     friend class InnerWindow;
     friend class TextWindow;
+    friend class PromptWindow<int>;
+    friend class PromptWindow<double>;
+    friend class PromptWindow<std::string>;
     private:
         struct Dimmensions {
             unsigned short x;

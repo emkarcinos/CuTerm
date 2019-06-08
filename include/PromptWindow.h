@@ -14,11 +14,13 @@ class PromptWindow : public InnerWindow {
         /* Draws a line that separates the text from the prompt */
         void drawSeparator();
     public:
-        /* Creates a PromptWindow object, user input will be written to output variable (second arg) */
-        PromptWindow(const TextObject& textObj, const type& output, const char& frameChar=' ', const char* winTitle="");
+        /* Creates a PromptWindow object, user input will be written to output variable (second arg) NOTE: can be either string, int or double*/
+        PromptWindow(TextObject& textObj, const type& output, const char& frameChar=' ', const char* winTitle="");
         /* Adds a text object to the window */
         virtual void addTextObject(TextObject& textObj) override;
-         /* Removes the text object from the window */
+        /* Removes the text object from the window */
         virtual void removeTextObject(TextObject& textObj) override;
+        /* Clears the window */
+        virtual void clear() override;
         virtual ~PromptWindow();
 };
