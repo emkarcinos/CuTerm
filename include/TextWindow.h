@@ -12,14 +12,12 @@ class TextWindow : public InnerWindow {
     public:
         TextWindow();
         /* This constructor sets the size automatically based on the TextObject dimmensions */
-        TextWindow(const TextObject& textObj, const char& frameChar='*', const char* winName="");
+        TextWindow(TextObject& textObj, const char& frameChar='*', const char* winName="");
         /* Obfuscated constructor */
         TextWindow(const char &frameChar, const char* winName="", const char* text="");
         virtual ~TextWindow();
         /* Adds a text to the window */
         virtual void addText(const char* text) override;
-        /* Adds a text object to the window */
-        void addTextObject(const TextObject& textObj);
         /* Clears the window's content */
         virtual void clear() override;
 };

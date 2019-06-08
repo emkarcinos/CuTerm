@@ -1,11 +1,14 @@
 #pragma once
 
-#include "InnerWindow.h"
-
 #include <iostream>
 #include <string>
 
+#include "InnerWindow.h"
+
+class InnerWindow;
+
 class TextObject {
+    friend class InnerWindow;
     friend class TextWindow;
     private:
         struct Dimmensions {

@@ -4,6 +4,9 @@
 #include "TerminalWindow.h"
 #include "TextObject.h"
 
+class TerminalWindow;
+class TextObject;
+
 class InnerWindow : public Window {
     friend class TerminalWindow;
     friend class TextObj;
@@ -36,6 +39,8 @@ class InnerWindow : public Window {
         void setFrame(const char &frameChar);
         /* Adds text to the top of the window */
         void setTitle(const char* winTitle);
+        /* Adds a text object to the window */
+        void addTextObject(TextObject& textObj);
         /* Removes a TextObject from the window */
         void removeTextObject(TextObject& textObj);
 };

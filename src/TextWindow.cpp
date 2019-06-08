@@ -11,25 +11,7 @@ void TextWindow::addText(const char* text){
     }
 }
 
-void TextWindow::addTextObject(const TextObject& textObj){
-    if(textObj.size.x > winDimm.sizeX-2 && textObj.size.y > winDimm.sizeY-2) 
-    // if the window's dimmensions are not big enoguh, the function will return.
-        return;
-    textObj
-    unsigned int startX = winDimm.sizeX/2 - textObj.size.x/2;
-    unsigned int startY = winDimm.sizeY/2 - textObj.size.y/2;
-    unsigned int lineCount=0;
-    unsigned int ptr=0;
-    for(const char& ch : textObj.finalStr){
-        if(ch=='\n'){lineCount++; ptr=0;}
-        else {
-            drawingMarix[startY+lineCount][startX+ptr]=ch;
-            ptr++;
-        }
-    }
-}
-
-TextWindow::TextWindow(const TextObject& textObj, const char& frameChar, const char* winName){
+TextWindow::TextWindow(TextObject& textObj, const char& frameChar, const char* winName){
     setDimmensions(textObj.size.x+4, textObj.size.y+4);
     initMatrix();
     setFrame(frameChar);
