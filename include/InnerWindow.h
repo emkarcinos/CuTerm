@@ -40,5 +40,5 @@ class InnerWindow : public Window {
         /* Adds a text object to the window */
         virtual void addTextObject(TextObject& textObj)=0;
         /* Removes a TextObject from the window */
-        void removeTextObject(TextObject& textObj);
+        virtual void removeTextObject(TextObject& textObj)=0;
 };
