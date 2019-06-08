@@ -47,4 +47,4 @@ InnerWindow::InnerWindow(){ }
 
 InnerWindow::~InnerWindow(){
     parent->removeWindow(*this);
- }
+ 
