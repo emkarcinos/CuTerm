@@ -1,7 +1,9 @@
 #include "PromptWindow.h"
 #include "TextObject.h"
+#include "TerminalWindow.h"
 
 #include <string>
+#include <iostream>
 
 template<class type>
 void PromptWindow<type>::addTextObject(TextObject& textObj){
@@ -30,11 +32,26 @@ void PromptWindow<type>::drawSeparator(){
 
 template<class type>
 void PromptWindow<type>::moveCursor(){
-
+    unsigned int destinationX = parent->termDimm.ws_col/2 - winDimm.sizeX/2 + 2;
+    unsigned int destinationY = (parent->termDimm.ws_row/2 - winDimm.sizeY/2) + winDimm.sizeY - 2;
+    // Move the cursor down
+    for(unsigned int row=0; row<destinationY; row++)
+        std::cout << "\033[1B";
+    // Move the cursor forward
+    for(unsigned int col=0; col<destinationX; col++)
+        std::cout << "\033[1C";
 }
 
 template<class type>
-PromptWindow<type>::PromptWindow(TextObject& textObj, const type& output, const char& frameChar, const char* winTitle){
+void PromptWindow<type>::prompt(type& input){
+    moveCursor();
+    std::cout << "> ";
+    std::cin >> input;
+    std::cout << "\033[2J\033[1;1H"; // Moves the cursor back to the beginning of the window
+}
+
+template<class type>
+PromptWindow<type>::PromptWindow(TextObject& textObj, const char& frameChar, const char* winTitle){
     setDimmensions(textObj.size.x+4, textObj.size.y+6);
     initMatrix();
     setFrame(frameChar);
@@ -45,16 +62,25 @@ PromptWindow<type>::PromptWindow(TextObject& textObj, const type& output, const 
 
 template<class type>
 void PromptWindow<type>::removeTextObject(TextObject& textObj){
-
+    unsigned int startY=winDimm.sizeY/2 - textObj.size.x/2;
+    unsigned int startX=(winDimm.sizeX/2 - textObj.size.y/2)-1;
+    for(unsigned int row=0; row<textObj.size.y; row++){
+        for(unsigned int col=0; col<textObj.size.x; col++){
+            drawingMarix[row+startY][col+startX]=' ';
+        }
+    }
+    textObj.parent=nullptr;
 }
 template<class type>
 void PromptWindow<type>::clear(){
-
+    for(unsigned int row=0; row<winDimm.sizeY-2; row++){
+        for(unsigned int col=0; col<winDimm.sizeX; col++)
+            drawingMarix[row][col]=' ';
+    }
 }
 
 template<class type>
 PromptWindow<type>::~PromptWindow(){
-
 }
 
 template class PromptWindow<int>;

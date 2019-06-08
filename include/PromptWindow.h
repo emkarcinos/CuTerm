@@ -15,12 +15,14 @@ class PromptWindow : public InnerWindow {
         void drawSeparator();
     public:
         /* Creates a PromptWindow object, user input will be written to output variable (second arg) NOTE: can be either string, int or double*/
-        PromptWindow(TextObject& textObj, const type& output, const char& frameChar=' ', const char* winTitle="");
+        PromptWindow(TextObject& textObj, const char& frameChar=' ', const char* winTitle="");
         /* Adds a text object to the window */
         virtual void addTextObject(TextObject& textObj) override;
         /* Removes the text object from the window */
         virtual void removeTextObject(TextObject& textObj) override;
         /* Clears the window */
+        /* Input/output mechanism */
+        void prompt(type& input);
         virtual void clear() override;
         virtual ~PromptWindow();
 };

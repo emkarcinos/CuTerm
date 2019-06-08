@@ -2,11 +2,15 @@
 
 #include "Window.h"
 
+#include <string>
+
 class InnerWindow;
 template<class type> class PromptWindow;
 
 class TerminalWindow : public Window{
-    friend class PromptWindow<void>;
+    friend class PromptWindow<int>;
+    friend class PromptWindow<double>;
+    friend class PromptWindow<std::string>;
     private:
         /* Holds info about terminal dimmensions */
         struct winsize {

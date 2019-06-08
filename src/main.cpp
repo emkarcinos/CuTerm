@@ -13,9 +13,12 @@ int main(){
     textObj->format("center", 0);
     //delete textObj;
     double test;
-    PromptWindow<double>* win1 = new PromptWindow<double>(*textObj, test, '*', " Test ");
+    PromptWindow<double>* win1 = new PromptWindow<double>(*textObj, '*', " Test ");
     terminal->append(*win1);
-    //delete win1;  
+    win1->prompt(test);
+    delete win1;  
     std::cin.get();
     delete terminal;
+    std::cout << test;
+    std::cin.get();
 }
