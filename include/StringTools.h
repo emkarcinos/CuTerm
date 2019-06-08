@@ -2,7 +2,7 @@
 
 #include <string>
 
-#define DELIM " \n\t,.-\0"
+#define DELIM " \t,.-\0"
 
 /* Checks whereher the character is a delimeter */
 bool isDelimeter(const char& ch);
