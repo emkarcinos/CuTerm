@@ -20,6 +20,6 @@ class PromptWindow : public InnerWindow {
         /* Displays a prompt on the TerminalWindow and forwards user input to output (second arg) */
         static type prompt(TerminalWindow& termial, const TextObject& textObj, type& output, const char& frameChar=' ', const char* winTitle="");
         /* Adds a text object to the window */
-        virtual void addTextObject(TextObject& textObj) override
+        virtual void addTextObject(TextObject& textObj) override;
         virtual ~PromptWindow();
 };
