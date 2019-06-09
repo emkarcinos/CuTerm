@@ -10,11 +10,10 @@ class InnerWindow : public Window {
     friend class TextObj;
     protected:
         struct Dimmensions {
-            unsigned short int posX;
-            unsigned short int posY;
+            unsigned short int posX; //Leftmost point
+            unsigned short int posY; //Topmost point
             unsigned short int sizeX;
             unsigned short int sizeY;
-            char* align;
         } winDimm;
         /* Stores a character from which the frame is built */
         char frame;
@@ -24,10 +23,6 @@ class InnerWindow : public Window {
         void initMatrix();
         /* Sets window dimmension by values */
         void setDimmensions(const unsigned int _x, const unsigned int _y);
-        /* Sets window position to center*/
-        void setPos();
-        /* Sets window position by value */
-        void setPos(const unsigned int _x, const unsigned int _y);
     public:
         InnerWindow();
         ~InnerWindow();
@@ -39,6 +34,8 @@ class InnerWindow : public Window {
         void setTitle(const char* winTitle);
         /* Adds a text object to the window */
         virtual void addTextObject(TextObject& textObj)=0;
+        /* Sets window position by value */
+        void setPos();
         /* Removes a TextObject from the window */
         virtual void removeTextObject(TextObject& textObj)=0;
 };
