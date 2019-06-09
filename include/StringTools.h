@@ -10,9 +10,7 @@ class StringTools {
         static bool isDelimeter(const char& ch);
         /* Splits the string into multiple lines */
         static std::string splitStringToLines(const std::string& text, const unsigned int& sizeX, const unsigned int& sizeY, const unsigned int& spacing=0);
-        /* Returns one line from a given string */
-        static std::string getLineFromString(const std::string& text, const unsigned int& line);
-
+        
         /* Formatting functions */
         /* Aligns one line to the center of the textbox */
         static std::string alignLineCenter(const std::string& text, const unsigned int& size);
