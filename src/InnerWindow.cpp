@@ -35,7 +35,7 @@ void InnerWindow::setDimmensions(const unsigned int _x, const unsigned int _y){
 }
 
 void InnerWindow::setPos(const unsigned int& _x, const unsigned int& _y){
-    winDimm.posX=_x
+    winDimm.posX=_x;
     winDimm.posY=_y;
 }
 
