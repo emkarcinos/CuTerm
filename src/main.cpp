@@ -1,8 +1,4 @@
-#include "PromptWindow.h"
-#include "TerminalWindow.h"
-#include "TextWindow.h"
-#include "TextObject.h"
-#include "PasswordPrompt.h"
+#include "CuTerm.h"
 #include <iostream>
 #include <unistd.h>
 
