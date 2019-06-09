@@ -35,7 +35,7 @@ class InnerWindow : public Window {
         /* Adds a text object to the window */
         virtual void addTextObject(TextObject& textObj)=0;
         /* Sets window position by value */
-        void setPos();
+        void setPos(const unsigned int& _x, const unsigned int& _y);
         /* Removes a TextObject from the window */
         virtual void removeTextObject(TextObject& textObj)=0;
 };

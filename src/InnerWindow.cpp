@@ -34,9 +34,9 @@ void InnerWindow::setDimmensions(const unsigned int _x, const unsigned int _y){
     winDimm.sizeY=_y;
 }
 
-void InnerWindow::setPos(){
-    winDimm.posX=parent->termDimm.ws_col/2 - winDimm.sizeX/2;
-    winDimm.posY=parent->termDimm.ws_row/2 - winDimm.sizeY/2;
+void InnerWindow::setPos(const unsigned int& _x, const unsigned int& _y){
+    winDimm.posX=_x
+    winDimm.posY=_y;
 }
 
 InnerWindow::InnerWindow(){ }
