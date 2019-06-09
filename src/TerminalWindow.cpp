@@ -29,8 +29,8 @@ void TerminalWindow::setFrame(const char &frameChar){
 }
 
 void TerminalWindow::setTitle(const char *winTitle){
-    unsigned short int titleLength=strlen(winTitle);
-    unsigned short int writePos=termDimm.ws_col/2 - titleLength/2;
+    const unsigned short int titleLength=strlen(winTitle);
+    const unsigned short int writePos=termDimm.ws_col/2 - titleLength/2;
     for(unsigned int i=0; i<titleLength; i++)
         drawingMarix[0][writePos+i]=winTitle[i];
 }
@@ -84,8 +84,8 @@ void TerminalWindow::append(InnerWindow& win){
     if(win.winDimm.sizeX>termDimm.ws_col || win.winDimm.sizeY>termDimm.ws_row)
         return;
     win.parent=this;
-    unsigned int startX = termDimm.ws_col/2 - win.winDimm.sizeX/2;
-    unsigned int startY = termDimm.ws_row/2 - win.winDimm.sizeY/2;
+    const unsigned int startX = termDimm.ws_col/2 - win.winDimm.sizeX/2;
+    const unsigned int startY = termDimm.ws_row/2 - win.winDimm.sizeY/2;
     win.setPos(startX, startY); //Sets window position on the terminal
     for(unsigned int row=0; row<win.winDimm.sizeY; row++){
         for(unsigned int col=0; col<win.winDimm.sizeX; col++){
@@ -97,8 +97,8 @@ void TerminalWindow::append(InnerWindow& win){
 }
 
 void TerminalWindow::removeWindow(InnerWindow& win){
-    unsigned int startY=termDimm.ws_row/2 - win.winDimm.sizeY/2;
-    unsigned int startX=termDimm.ws_col/2 - win.winDimm.sizeX/2;
+    const unsigned int startY=termDimm.ws_row/2 - win.winDimm.sizeY/2;
+    const unsigned int startX=termDimm.ws_col/2 - win.winDimm.sizeX/2;
     for(unsigned int row=0; row<win.winDimm.sizeY; row++){
         for(unsigned int col=0; col<win.winDimm.sizeX; col++){
             drawingMarix[row+startY][col+startX]=' ';
