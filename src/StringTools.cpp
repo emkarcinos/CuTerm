@@ -2,13 +2,13 @@
 
 #include <sstream>
 
-bool isDelimeter(const char& ch){
+bool StringTools::isDelimeter(const char& ch){
     for(char del : DELIM) 
         if(ch==del) return 1;
     return 0;
 }
 
-std::string splitStringToLines(const std::string& text, const unsigned int& sizeX, const unsigned int& sizeY, const unsigned int& spacing){
+std::string StringTools::splitStringToLines(const std::string& text, const unsigned int& sizeX, const unsigned int& sizeY, const unsigned int& spacing){
     std::string finalStr;
     unsigned int lastEndPos=0; // Position of the ending of the last line
     unsigned int cursorPos=0; 
@@ -42,7 +42,7 @@ std::string splitStringToLines(const std::string& text, const unsigned int& size
     return finalStr;
 }
 
-std::string alignLineCenter(const std::string& text, const unsigned int& size){
+std::string StringTools::alignLineCenter(const std::string& text, const unsigned int& size){
     std::istringstream f(text);
     std::stringstream stream;
     std::string line;
@@ -59,7 +59,7 @@ std::string alignLineCenter(const std::string& text, const unsigned int& size){
     return stream.str();
 }
 
-std::string alignLineLeft(const std::string& text, const unsigned int& size){
+std::string StringTools::alignLineLeft(const std::string& text, const unsigned int& size){
     std::istringstream f(text);
     std::stringstream stream;
     std::string line;
@@ -71,7 +71,7 @@ std::string alignLineLeft(const std::string& text, const unsigned int& size){
     return stream.str();
 }   
 
-std::string alignLineRight(const std::string& text, const unsigned int& size){ 
+std::string StringTools::alignLineRight(const std::string& text, const unsigned int& size){ 
     std::istringstream f(text);
     std::stringstream stream;
     std::string line;

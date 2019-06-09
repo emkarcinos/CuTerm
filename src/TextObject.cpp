@@ -9,13 +9,13 @@ TextObject::TextObject(){
 
 void TextObject::format(const std::string& method, const unsigned int& spacing){
     if(spacing!=9999) size.spacing=spacing;
-    std::string result=splitStringToLines(textStr, size.x, size.y, size.spacing);
+    std::string result=StringTools::splitStringToLines(textStr, size.x, size.y, size.spacing);
     if (method=="right")
-        finalStr=alignLineRight(result, size.x);
+        finalStr=StringTools::alignLineRight(result, size.x);
     else if (method=="center")
-        finalStr=alignLineCenter(result, size.x);
+        finalStr=StringTools::alignLineCenter(result, size.x);
     else
-        finalStr=alignLineLeft(result, size.x);
+        finalStr=StringTools::alignLineLeft(result, size.x);
 }
 
 void TextObject::appendString(const std::string& text){
