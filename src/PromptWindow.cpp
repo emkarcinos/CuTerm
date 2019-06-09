@@ -11,8 +11,8 @@ void PromptWindow<type>::addTextObject(TextObject& textObj){
     // if the window's dimmensions are not big enoguh, the function will return.
         return;
     textObj.parent=this;
-    unsigned int startX = winDimm.sizeX/2 - textObj.size.x/2;
-    unsigned int startY = (winDimm.sizeY/2 - textObj.size.y/2)-1;
+    const unsigned int startX = winDimm.sizeX/2 - textObj.size.x/2;
+    const unsigned int startY = (winDimm.sizeY/2 - textObj.size.y/2)-1;
     unsigned int lineCount=0;
     unsigned int ptr=0;
     for(const char& ch : textObj.finalStr){
@@ -32,8 +32,8 @@ void PromptWindow<type>::drawSeparator(){
 
 template<class type>
 void PromptWindow<type>::moveCursor(){
-    unsigned int destinationX = parent->termDimm.ws_col/2 - winDimm.sizeX/2 + 2;
-    unsigned int destinationY = (parent->termDimm.ws_row/2 - winDimm.sizeY/2) + winDimm.sizeY - 2;
+    const unsigned int destinationX = winDimm.posX+2;
+    const unsigned int destinationY = winDimm.posY + winDimm.sizeY - 2;
     // Move the cursor down
     for(unsigned int row=0; row<destinationY; row++)
         std::cout << "\033[1B";
