@@ -6,11 +6,13 @@
 
 class InnerWindow;
 template<class type> class PromptWindow;
+class PasswordPrompt;
 
 class TerminalWindow : public Window{
     friend class PromptWindow<int>;
     friend class PromptWindow<double>;
     friend class PromptWindow<std::string>;
+    friend class PasswordPrompt;
     private:
         /* Holds info about terminal dimmensions */
         struct winsize {
