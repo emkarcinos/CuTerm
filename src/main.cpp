@@ -1,7 +1,7 @@
 #include "CuTerm.h"
 #include <iostream>
 #include <unistd.h>
-
+ 
 void showcase(){
     // Create TerminalWindow object
 
