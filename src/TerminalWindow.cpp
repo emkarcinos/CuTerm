@@ -97,8 +97,8 @@ void TerminalWindow::append(InnerWindow& win){
 }
 
 void TerminalWindow::removeWindow(InnerWindow& win){
-    const unsigned int startY=termDimm.ws_row/2 - win.winDimm.sizeY/2;
-    const unsigned int startX=termDimm.ws_col/2 - win.winDimm.sizeX/2;
+    const unsigned int startY=win.winDimm.posY;
+    const unsigned int startX=win.winDimm.posX;
     for(unsigned int row=0; row<win.winDimm.sizeY; row++){
         for(unsigned int col=0; col<win.winDimm.sizeX; col++){
             drawingMarix[row+startY][col+startX]=' ';

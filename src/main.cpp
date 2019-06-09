@@ -17,6 +17,8 @@ int main(){
     PasswordPrompt* win1 = new PasswordPrompt('*', " Test ");
     terminal->append(*win1);
     win1->prompt(pass);  
+    delete win1;
+    std::cin.get();
     std::cin.get();
     delete terminal;
 }
