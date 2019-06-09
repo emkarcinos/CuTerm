@@ -20,9 +20,9 @@ class PromptWindow : public InnerWindow {
         virtual void addTextObject(TextObject& textObj) override;
         /* Removes the text object from the window */
         virtual void removeTextObject(TextObject& textObj) override;
-        /* Clears the window */
         /* Input/output mechanism */
         void prompt(type& input);
+        /* Clears the window */
         virtual void clear() override;
         virtual ~PromptWindow();
 };
