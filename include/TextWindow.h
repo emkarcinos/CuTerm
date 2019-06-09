@@ -7,9 +7,6 @@
 class TextObject;
 
 class TextWindow : public InnerWindow {
-    private:
-        /* Sets window dimmension based of the text object */
-        void setDimmensionsByObject(const TextObject& textObj);
     public:
         TextWindow();
         /* This constructor sets the size automatically based on the TextObject dimmensions */
