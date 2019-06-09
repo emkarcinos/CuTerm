@@ -13,6 +13,7 @@ class TerminalWindow : public Window{
     friend class PromptWindow<double>;
     friend class PromptWindow<std::string>;
     friend class PasswordPrompt;
+    friend class InnerWindow;
     private:
         /* Holds info about terminal dimmensions */
         struct winsize {

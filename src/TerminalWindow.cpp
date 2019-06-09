@@ -86,6 +86,7 @@ void TerminalWindow::append(InnerWindow& win){
     win.parent=this;
     unsigned int startX = termDimm.ws_col/2 - win.winDimm.sizeX/2;
     unsigned int startY = termDimm.ws_row/2 - win.winDimm.sizeY/2;
+    win.setPos(startX, startY); //Sets window position on the terminal
     for(unsigned int row=0; row<win.winDimm.sizeY; row++){
         for(unsigned int col=0; col<win.winDimm.sizeX; col++){
             //std::cout << win.drawingMarix[row][col];
