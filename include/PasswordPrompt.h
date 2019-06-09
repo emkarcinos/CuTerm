@@ -16,7 +16,8 @@ class PasswordPrompt : public InnerWindow {
         void drawSeparator();
     public:
         /* Returns a PasswordPrompt */
-       PasswordPrompt(const char& frameChar=' ', const char* winTitle="");
-       /* Input/output mechanism */
+        PasswordPrompt(const char& frameChar=' ', const char* winTitle="");
+        /* Input/output mechanism */
         void prompt(std::string output);
+        virtual ~PasswordPrompt();
 };
