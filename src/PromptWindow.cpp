@@ -46,8 +46,10 @@ template<class type>
 void PromptWindow<type>::prompt(type& input){
     moveCursor();
     std::cout << "> ";
+    system("setterm -cursor on");
     std::cin >> input;
     std::cout << "\033[2J\033[1;1H"; // Moves the cursor back to the beginning of the window
+    system("setterm -cursor off");
 }
 
 template<class type>

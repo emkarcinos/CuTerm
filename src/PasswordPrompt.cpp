@@ -47,7 +47,9 @@ void PasswordPrompt::clear(){
 void PasswordPrompt::prompt(std::string output){
     moveCursor();
     std::cout << "> ";
+    system("setterm -cursor on");
     std::cin >> output;
+    system("setterm -cursor off");
 }
 
 PasswordPrompt::~PasswordPrompt(){
