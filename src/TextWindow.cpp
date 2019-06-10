@@ -20,8 +20,8 @@ void TextWindow::addTextObject(TextObject& textObj){
     // if the window's dimmensions are not big enoguh, the function will return.
         return;
     textObj.parent=this;
-    unsigned int startX = winDimm.sizeX/2 - textObj.size.x/2;
-    unsigned int startY = winDimm.sizeY/2 - textObj.size.y/2;
+    const unsigned int startX = winDimm.sizeX/2 - textObj.size.x/2;
+    const unsigned int startY = winDimm.sizeY/2 - textObj.size.y/2;
     unsigned int lineCount=0;
     unsigned int ptr=0;
     for(const char& ch : textObj.finalStr){
@@ -41,8 +41,8 @@ void TextWindow::clear(){
 }
 
 void TextWindow::removeTextObject(TextObject& textObj){
-    unsigned int startY=winDimm.sizeY/2 - textObj.size.x/2;
-    unsigned int startX=winDimm.sizeX/2 - textObj.size.y/2;
+    const unsigned int startY=winDimm.sizeY/2 - textObj.size.x/2;
+    const unsigned int startX=winDimm.sizeX/2 - textObj.size.y/2;
     for(unsigned int row=0; row<textObj.size.y; row++){
         for(unsigned int col=0; col<textObj.size.x; col++){
             drawingMarix[row+startY][col+startX]=' ';
