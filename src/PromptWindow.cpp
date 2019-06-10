@@ -62,8 +62,8 @@ PromptWindow<type>::PromptWindow(TextObject& textObj, const char& frameChar, con
 
 template<class type>
 void PromptWindow<type>::removeTextObject(TextObject& textObj){
-    unsigned int startY=winDimm.sizeY/2 - textObj.size.x/2;
-    unsigned int startX=(winDimm.sizeX/2 - textObj.size.y/2)-1;
+    const unsigned int startY=winDimm.sizeY/2 - textObj.size.x/2;
+    const unsigned int startX=(winDimm.sizeX/2 - textObj.size.y/2)-1;
     for(unsigned int row=0; row<textObj.size.y; row++){
         for(unsigned int col=0; col<textObj.size.x; col++){
             drawingMarix[row+startY][col+startX]=' ';
